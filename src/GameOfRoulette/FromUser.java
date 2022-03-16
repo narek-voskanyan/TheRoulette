@@ -3,16 +3,25 @@ package GameOfRoulette;
 import java.util.Scanner;
 
 public class FromUser {
+
         FromUser(String name, int cash){
             this.name = name;
             this.cash = cash;
         }
-     private Scanner in = new Scanner(System.in);
 
-   public int intNumber(){
-        System.out.println("Please enter the chosen number");
-        int intFromUser = in.nextInt();
-        return intFromUser;
+     public void checkCash(){
+            if(this.cash == 0){
+                System.out.println("You had lost all your money");
+                System.exit(0);
+            }
+     }
+
+    public void counterPlus(int cash){
+            this.cash += cash;
+    }
+
+    public void counterMinus(int cash){
+            this.cash -= cash;
     }
 
      private final String name;

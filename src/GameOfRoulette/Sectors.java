@@ -43,7 +43,8 @@ public class Sectors {
         allNumbers.add(new BoxOfNumber(14, "Orphelins", "red"));
         allNumbers.add(new BoxOfNumber(31, "Orphelins", "black"));
         allNumbers.add(new BoxOfNumber(9, "Orphelins", "red"));
-            BoxOfNumber a = allNumbers.get((int) Math.random()*37);
+
+            BoxOfNumber a = allNumbers.get( (int) (Math.random() * 37));
         return a;
     }
 

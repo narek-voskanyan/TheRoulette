@@ -6,7 +6,8 @@ public class Main {
 
     public static void main(String[] args) {
       BoxOfNumber forGame = Sectors.getRandomIntegers();
-        System.out.println(forGame.getNumber());
+
+
 
     }
 }
