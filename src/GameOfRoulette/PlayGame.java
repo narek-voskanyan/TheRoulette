@@ -66,18 +66,20 @@ public class PlayGame {
             finish:
             while(true) {
                 ///!!!!!!!!!!!!!
-               String answer = in.nextLine();
+               String answer = in.next();
                 answer = answer.toLowerCase();
 
                 if (answer.equals("y")) {
+                    System.out.println("---------GOOD LUCK---------");
                     continue one;
                 } else if (answer.equals("f")) {
                     System.out.println("Thank you for game, you go out from game with " + user.checkCash() + " $");
                     System.exit(0);
                 } else {
                     System.out.println("Sorry I don't know that command");
+                    continue finish;
                 }
-                continue finish;
+
             }
 
         }
