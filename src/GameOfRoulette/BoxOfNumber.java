@@ -12,7 +12,7 @@ public class BoxOfNumber {
     private final String color;
 
     public int getNumber(){
-        return number;
+        return this.number;
     }
 }
 

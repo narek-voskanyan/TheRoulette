@@ -1,12 +1,13 @@
 package GameOfRoulette;
 
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class PlayGame {
 
     ArrayList<BoxOfNumber> forGame = Sectors.getRandomIntegers();
-    BoxOfNumber a = forGame.get((int) (Math.random() * 37));
+    BoxOfNumber numberBox = forGame.get((int) (Math.random() * 37));
     Scanner in = new Scanner(System.in);
 
     // to get a special info about player
@@ -27,6 +28,7 @@ public class PlayGame {
         System.out.println("Hello " + user.getName() + ", we wish you good game");
         int chosenNum = -1;
         int bidOnCash = 0;
+        one:
         while (true) {
 
             System.out.println("Please enter your chosen number from 0 to 36");
@@ -45,12 +47,33 @@ public class PlayGame {
 
                // check the user ivalable to bid so much
                 if(bidOnCash > user.checkCash()){
-                    System.out.println("Sorry, you have not so much");
+                    System.out.println("Sorry, you have not so much, you have only " + user.checkCash());
                     continue to;
+                }else{
+                    break to;
                 }
-
-
-
+            }
+            if(chosenNum == numberBox.getNumber()){
+                user.counterPlus(bidOnCash * 35);
+            }else{
+                user.counterMinus(bidOnCash);
+                user.checkUserStatus();
+            }
+            System.out.println("Your cash is " + user.checkCash() + "\n" + " If you would like to continue put Y, \n " +
+                    "if you would like to finish game put F");
+            finish:
+            while(true) {
+                String answer = in.nextLine();
+                answer.toLowerCase();
+                if (answer.equals("y")) {
+                    continue one;
+                } else if (answer.equals("f")) {
+                    System.out.println("Tank you for game you lost us whit " + user.checkCash());
+                    System.exit(0);
+                } else {
+                    System.out.println("Sorry I don't know that command");
+                }
+                continue finish;
             }
 
         }
