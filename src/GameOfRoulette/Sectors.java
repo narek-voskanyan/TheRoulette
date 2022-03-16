@@ -3,6 +3,7 @@ package GameOfRoulette;
 import java.util.ArrayList;
 
 public class Sectors {
+
     public  void addIntegers(){
         ArrayList<BoxOfNumber> allNumbers = new ArrayList<BoxOfNumber>(37);
         allNumbers.add(new BoxOfNumber(22, "Voisins de zero", "black"));
