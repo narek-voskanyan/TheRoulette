@@ -1,7 +1,5 @@
 package GameOfRoulette;
 
-import java.util.Scanner;
-
 public class FromUser {
 
         FromUser(String name, int cash){
@@ -17,12 +15,8 @@ public class FromUser {
      }
 
     //to check the user available to bid so much cash
-     public boolean checkCash(int forCheckBidStatus){
-            if(this.cash < forCheckBidStatus){
-                System.out.println("Sorry, but you have no so much money");
-                return false;
-            }
-            return true;
+     public int checkCash(){
+            return this.cash;
      }
 
     // to add the win money
@@ -34,7 +28,9 @@ public class FromUser {
     public void counterMinus(int cash){
             this.cash -= cash;
     }
-
+     public String getName(){
+            return this.name;
+     }
      private final String name;
      private int cash;
 }
