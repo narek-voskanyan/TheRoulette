@@ -8,7 +8,7 @@ public class FromUser {
             this.name = name;
             this.cash = cash;
         }
-
+    // Check user status
      public void checkUserStatus(){
             if(this.cash == 0){
                 System.out.println("You had lost all your money");
