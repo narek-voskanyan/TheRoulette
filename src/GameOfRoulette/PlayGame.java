@@ -34,7 +34,8 @@ public class PlayGame {
 
     public void StartGame() {
         FromUser user = getInfo();
-        System.out.println("Hello, " + user.getName() + ", we wish you good game");
+        System.out.println("Hello, " + user.getName() + ":\n We wish you good game \n" +
+                "---------THE GAME IS STARTING---------");
         int chosenNum = -1;
         int bidOnCash = 0;
         one:
@@ -70,7 +71,7 @@ public class PlayGame {
             if(chosenNum == numberBox.getNumber()){
                 // the player win
                 user.counterPlus(bidOnCash * 35);
-                System.out.println("CONGRATULATIONS YOU WIN  " + bidOnCash * 35 +
+                System.out.println("CONGRATULATIONS YOU WIN  " + (bidOnCash * 35) +
                         " $ : your cash now is " + user.checkCash() + " $");
             }else{
                 //the player loss
@@ -79,7 +80,7 @@ public class PlayGame {
                 user.checkUserStatus();
             }
             System.out.println("Your cash is " + user.checkCash() + "\n" + " If you would like to continue put Y, \n " +
-                    "if you would like to finish game put F");
+                    "if you would like to finish game put N");
 
             finish:
             while(true) {
@@ -91,7 +92,7 @@ public class PlayGame {
                     System.out.println("---------GOOD LUCK---------");
                     continue one;
                 // if user want finish game
-                } else if (answer.equals("f")) {
+                } else if (answer.equals("n")) {
                     System.out.println("Thank you for game, you go out from game with " + user.checkCash() + " $");
                     System.exit(0);
                     // the false command from user
