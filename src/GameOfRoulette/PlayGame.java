@@ -76,7 +76,8 @@ public class PlayGame {
             }else{
                 //the player loss
                 user.counterMinus(bidOnCash);
-                System.out.println("Sorry you lost, the winner number is " + numberBox.getNumber() );
+                System.out.println("Sorry you lost, the winner number is " + numberBox.getNumber() + " "
+                        + numberBox.getColor());
                 user.checkUserStatus();
             }
             System.out.println("Your cash is " + user.checkCash() + "\n" + " If you would like to continue put Y, \n " +
