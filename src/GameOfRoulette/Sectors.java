@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Sectors {
 
-    public static ArrayList<BoxOfNumber>  addIntegers(){
+    public static BoxOfNumber  addIntegers(){
         ArrayList<BoxOfNumber> allNumbers = new ArrayList<BoxOfNumber>(37);
         allNumbers.add(new BoxOfNumber(22, "Voisins de zero", "black"));
         allNumbers.add(new BoxOfNumber(18, "Voisins de zero", "red"));
@@ -43,8 +43,8 @@ public class Sectors {
         allNumbers.add(new BoxOfNumber(14, "Orphelins", "red"));
         allNumbers.add(new BoxOfNumber(31, "Orphelins", "black"));
         allNumbers.add(new BoxOfNumber(9, "Orphelins", "red"));
-
-        return allNumbers;
+            BoxOfNumber a = allNumbers.get((int) Math.random()*37);
+        return a;
     }
 
 
