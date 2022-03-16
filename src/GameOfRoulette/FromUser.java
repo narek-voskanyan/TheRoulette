@@ -16,6 +16,7 @@ public class FromUser {
             }
      }
 
+    //to check the user available to bid so much cash
      public boolean checkCash(int forCheckBidStatus){
             if(this.cash < forCheckBidStatus){
                 System.out.println("Sorry, but you have no so much money");
@@ -24,10 +25,12 @@ public class FromUser {
             return true;
      }
 
+    // to add the win money
     public void counterPlus(int cash){
             this.cash += cash;
     }
 
+    //to pull off the lost money
     public void counterMinus(int cash){
             this.cash -= cash;
     }
