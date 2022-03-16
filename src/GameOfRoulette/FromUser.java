@@ -22,7 +22,7 @@ public class FromUser {
 
     // to add the win money
     public void counterPlus(int cash){
-            this.cash += cash ;
+            this.cash += cash;
     }
 
     //to pull off the lost money
