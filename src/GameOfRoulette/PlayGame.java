@@ -57,15 +57,16 @@ public class PlayGame {
                 user.counterPlus(bidOnCash * 35);
             }else{
                 user.counterMinus(bidOnCash);
-                user.checkUserStatus();
                 System.out.println("Sorry you lost, the winner number is " + numberBox.getNumber() );
+                user.checkUserStatus();
             }
             System.out.println("Your cash is " + user.checkCash() + "\n" + " If you would like to continue put Y, \n " +
                     "if you would like to finish game put F");
 
             finish:
             while(true) {
-                String answer = in.nextLine();
+                ///!!!!!!!!!!!!!
+               String answer = in.nextLine();
                 answer = answer.toLowerCase();
 
                 if (answer.equals("y")) {
