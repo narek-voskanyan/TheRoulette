@@ -2,9 +2,10 @@ package GameOfRoulette;
 
 public class FromUser {
 
-        FromUser(String name, int cash){
+        FromUser(String name, int cash, int age){
             this.name = name;
             this.cash = cash;
+            this.age = age;
         }
     // Check user status
      public void checkUserStatus(){
@@ -21,7 +22,7 @@ public class FromUser {
 
     // to add the win money
     public void counterPlus(int cash){
-            this.cash += cash;
+            this.cash += cash ;
     }
 
     //to pull off the lost money
@@ -31,6 +32,7 @@ public class FromUser {
      public String getName(){
             return this.name;
      }
-     private final String name;
-     private int cash;
+        private final String name;
+        private int age;
+        private int cash;
 }

@@ -7,15 +7,14 @@ public class BoxOfNumber {
         this.color = color;
     }
 
-
-
     public int getNumber(){
         return this.number;
     }
-    //for color
+    //The color will come soon...
     public String getColor(){
         return this.color;
     }
+
     private final  int number;
     private final String quickBets;
     private final String color;
