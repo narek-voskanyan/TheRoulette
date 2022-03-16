@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Sectors {
 
-    public static BoxOfNumber  addIntegers(){
+    public static BoxOfNumber  getRandomIntegers(){
         ArrayList<BoxOfNumber> allNumbers = new ArrayList<BoxOfNumber>(37);
         allNumbers.add(new BoxOfNumber(22, "Voisins de zero", "black"));
         allNumbers.add(new BoxOfNumber(18, "Voisins de zero", "red"));
