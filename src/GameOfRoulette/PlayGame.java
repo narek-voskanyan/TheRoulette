@@ -6,8 +6,8 @@ import java.util.Scanner;
 
 public class PlayGame {
 
-    ArrayList<BoxOfNumber> forGame = Sectors.getRandomIntegers();
-    BoxOfNumber numberBox = forGame.get((int) (Math.random() * 37));
+   private final ArrayList<BoxOfNumber> forGame = Sectors.getRandomIntegers();
+    BoxOfNumber numberBox;
     Scanner in = new Scanner(System.in);
 
     // to get a special info about player
@@ -34,7 +34,7 @@ public class PlayGame {
 
     public void StartGame() {
         FromUser user = getInfo();
-        System.out.println("Hello " + user.getName() + ", we wish you good game");
+        System.out.println("Hello, " + user.getName() + ", we wish you good game");
         int chosenNum = -1;
         int bidOnCash = 0;
         one:
@@ -62,9 +62,18 @@ public class PlayGame {
                     break to;
                 }
             }
+
+            // to get a random box object
+            numberBox = forGame.get((int) (Math.random() * 37));
+
+            // to start a game
             if(chosenNum == numberBox.getNumber()){
+                // the player win
                 user.counterPlus(bidOnCash * 35);
+                System.out.println("CONGRATULATIONS YOU WIN  " + bidOnCash * 35 +
+                        " $ : your cash now is " + user.checkCash() + " $");
             }else{
+                //the player loss
                 user.counterMinus(bidOnCash);
                 System.out.println("Sorry you lost, the winner number is " + numberBox.getNumber() );
                 user.checkUserStatus();
@@ -77,13 +86,15 @@ public class PlayGame {
                 ///!!!!!!!!!!!!!
                String answer = in.next();
                 answer = answer.toLowerCase();
-
+                // if user want to continue
                 if (answer.equals("y")) {
                     System.out.println("---------GOOD LUCK---------");
                     continue one;
+                // if user want finish game
                 } else if (answer.equals("f")) {
                     System.out.println("Thank you for game, you go out from game with " + user.checkCash() + " $");
                     System.exit(0);
+                    // the false command from user
                 } else {
                     System.out.println("Sorry I don't know that command");
                     continue finish;
