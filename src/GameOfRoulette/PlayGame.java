@@ -58,17 +58,20 @@ public class PlayGame {
             }else{
                 user.counterMinus(bidOnCash);
                 user.checkUserStatus();
+                System.out.println("Sorry you lost, the winner number is " + numberBox.getNumber() );
             }
             System.out.println("Your cash is " + user.checkCash() + "\n" + " If you would like to continue put Y, \n " +
                     "if you would like to finish game put F");
+
             finish:
             while(true) {
                 String answer = in.nextLine();
-                answer.toLowerCase();
+                answer = answer.toLowerCase();
+
                 if (answer.equals("y")) {
                     continue one;
                 } else if (answer.equals("f")) {
-                    System.out.println("Tank you for game you lost us whit " + user.checkCash());
+                    System.out.println("Thank you for game, you go out from game with " + user.checkCash() + " $");
                     System.exit(0);
                 } else {
                     System.out.println("Sorry I don't know that command");
